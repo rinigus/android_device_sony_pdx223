@@ -852,8 +852,8 @@ vendor/firmware/vpu20_4v_unsigned.mbn
 vendor/etc/wifi/wifi_txpower.conf
 
 # WiFi
-vendor/etc/wifi/bdwlan.elf
+vendor/etc/wifi/bdwlan.elf;SYMLINK=vendor/firmware/bdwlan.elf
 
 # Wifi firmware
-vendor/etc/wifi/bdwlan.e47
-vendor/etc/wifi/bdwlan.e48
+vendor/etc/wifi/bdwlan.e47;SYMLINK=vendor/firmware/bdwlan.e47
+vendor/etc/wifi/bdwlan.e48;SYMLINK=vendor/firmware/bdwlan.e48
