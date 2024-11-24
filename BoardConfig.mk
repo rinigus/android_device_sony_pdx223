@@ -34,10 +34,15 @@ BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNE
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_dlkm/modules.load))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE :=  $(KERNEL_PATH)/vendor_dlkm/modules.blocklist
 
-BOARD_KERNEL_CMDLINE += buildproduct=pdx223
+# BOARD_KERNEL_CMDLINE += buildproduct=pdx223
 TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 PRODUCT_COPY_FILES += \
 	$(KERNEL_PATH)/kernel:kernel
+
+# Device-specific partition sizes
+# data from AOSP config
+# Reserve space for data encryption (234859245568-16384)
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 234859229184
 
 # Props
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
