@@ -250,8 +250,6 @@ vendor/camera/version.dat
 vendor/etc/camera/camxoverridesettings.txt
 vendor/etc/init/vendor.somc.hardware.camera.provider@1.0-service.rc
 vendor/etc/vintf/manifest/vendor.somc.hardware.camera.provider.manifest.xml
-vendor/lib64/Camera_QNN/libQnnHtp.so;MODULE_SUFFIX=.cameraqnn
-vendor/lib64/Camera_QNN/libQnnHtpV73Stub.so;MODULE_SUFFIX=.cameraqnn
 vendor/lib64/camera/com.qti.eeprom.gt24p128c2csli_imx766.so
 vendor/lib64/camera/com.qti.eeprom.irs2381c_polar.so
 vendor/lib64/camera/com.qti.eeprom.truly_cmb433.so
