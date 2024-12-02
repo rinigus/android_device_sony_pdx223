@@ -544,7 +544,7 @@ vendor/lib64/libubifocus.so
 vendor/lib64/local_libcamera_metadata.so
 vendor/lib64/vendor.qti.hardware.camera.aon@1.0-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
-vendor/lib64/vendor.qti.hardware.display.config-V2-ndk_platform.so
+vendor/lib64/vendor.qti.hardware.display.config-V2-ndk_platform.so;DISABLE_CHECKELF
 vendor/lib64/vendor.somc.camera.device@3.2-impl.so;DISABLE_CHECKELF
 vendor/lib64/vendor.somc.camera.device@3.3-impl.so;DISABLE_CHECKELF
 vendor/lib64/vendor.somc.camera.device@3.4-impl.so;DISABLE_CHECKELF
