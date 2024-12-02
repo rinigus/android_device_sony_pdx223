@@ -22,6 +22,9 @@ DEVICE_PATH := device/sony/pdx223
 # Display
 TARGET_SCREEN_DENSITY := 420
 
+# Kernel
+TARGET_KERNEL_CONFIG += vendor/sony/pdx223.config
+
 # Device-specific partition sizes
 # data from AOSP config
 # Reserve space for data encryption (234859245568-16384)
