@@ -24,6 +24,7 @@ TARGET_SCREEN_DENSITY := 420
 
 # Kernel
 TARGET_KERNEL_CONFIG += vendor/sony/pdx223.config
+BOARD_KERNEL_CMDLINE += buildproduct=pdx223
 
 # Device-specific partition sizes
 # data from AOSP config
