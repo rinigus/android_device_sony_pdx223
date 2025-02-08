@@ -14,30 +14,26 @@
 # limitations under the License.
 #
 
-# Inherit from sony sm8350-common
--include device/sony/sm8350-common/BoardConfigCommon.mk
+# Inherit from sony sm8450-common
+-include device/sony/sm8450-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/sony/pdx215
+DEVICE_PATH := device/sony/pdx223
 
 # Display
 TARGET_SCREEN_DENSITY := 420
 
-BOARD_KERNEL_CMDLINE += buildproduct=pdx215
+# Kernel
+BOARD_KERNEL_CMDLINE += buildproduct=pdx223
 
-TARGET_KERNEL_SOURCE := kernel/sony/sm8350
-TARGET_KERNEL_CONFIG := pdx215_defconfig
+TARGET_KERNEL_CONFIG += vendor/sony/pdx223.config
 
-BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
-BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
-BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+# Device-specific partition sizes
+# data from AOSP config
+# Reserve space for data encryption (234859245568-16384)
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 234859229184
 
 # Props
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # inherit from the proprietary version
--include vendor/sony/pdx215/BoardConfigVendor.mk
+-include vendor/sony/pdx223/BoardConfigVendor.mk

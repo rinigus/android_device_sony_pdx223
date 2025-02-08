@@ -22,8 +22,8 @@
 # definition file).
 #
 
-# Inherit from sony sm8350-common
-$(call inherit-product, device/sony/sm8350-common/common.mk)
+# Inherit from sony sm8450-common
+$(call inherit-product, device/sony/sm8450-common/common.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
@@ -48,7 +48,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
-    $(LOCAL_PATH)/nfc/libnfc-nxp-typef.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp-typef.conf \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
 # Soong namespaces
@@ -56,4 +55,4 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/sony/pdx215/pdx215-vendor.mk)
+$(call inherit-product, vendor/sony/pdx223/pdx223-vendor.mk)

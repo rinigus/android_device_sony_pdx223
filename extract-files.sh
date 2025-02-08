@@ -1,9 +1,26 @@
 #!/bin/bash
 #
-# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
-# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2021 The LineageOS Project
+#
 # SPDX-License-Identifier: Apache-2.0
 #
+
+function blob_fixup() {
+    case "${1}" in
+        vendor/lib64/libcamximageformatutils.so)
+            [ "$2" = "" ] && return 0
+            ${PATCHELF} --replace-needed "vendor.qti.hardware.display.config-V2-ndk_platform.so" "vendor.qti.hardware.display.config-V2-ndk.so" "${2}"
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
+
+function blob_fixup_dry() {
+    blob_fixup "$1" ""
+}
 
 # If we're being sourced by the common script that we called,
 # stop right here. No need to go down the rabbit hole.
@@ -14,11 +31,10 @@ fi
 set -e
 
 # Required!
-export DEVICE=pdx215
-export DEVICE_COMMON=sm8350-common
+export DEVICE=pdx223
+export DEVICE_COMMON=sm8450-common
 export VENDOR=sony
-export VENDOR_COMMON=${VENDOR}
 
 export DEVICE_BRINGUP_YEAR=2022
 
-"./../../${VENDOR_COMMON}/${DEVICE_COMMON}/extract-files.sh" "$@"
+"./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
