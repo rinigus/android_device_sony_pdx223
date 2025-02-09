@@ -390,6 +390,7 @@ vendor/lib64/com.qti.feature2.frameselect.so
 vendor/lib64/com.qti.feature2.fusion.so
 vendor/lib64/com.qti.feature2.generic.so
 vendor/lib64/com.qti.feature2.gs.cedros.so
+vendor/lib64/com.qti.feature2.gs.fillmore.so
 vendor/lib64/com.qti.feature2.gs.sdm865.so
 vendor/lib64/com.qti.feature2.gs.sm8350.so
 vendor/lib64/com.qti.feature2.gs.sm8450.so
